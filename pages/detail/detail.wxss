@@ -1,0 +1,47 @@
+page{
+  padding:10rpx;
+}
+.video_wrap{
+  margin-top:10rpx;
+  width:100%;
+}
+.video_wrap video{
+  width:100%;
+}
+.video_wrap text{
+  margin:0rpx 5rpx;
+  font-size: 25rpx;
+  color:#666;
+}
+.video_wrap .video_author{
+  font-size:25rpx;
+  color:#000;
+}
+.others_wrap{
+  width:100%;
+}
+.others_wrap .others_item{
+  display: flex;
+  padding-top:10rpx;
+}
+.others_wrap .others_image{
+  flex:1;
+  width:100%;
+  border-radius: 15rpx;
+  margin-right: 10rpx;
+}
+.others_wrap .others_box{
+  flex:2;
+  width:100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+}
+.others_wrap .others_title{
+  font-size: 25rpx;
+  color:pink;
+}
+.others_wrap .others_text{
+  font-size:25rpx;
+  color:#666;
+}

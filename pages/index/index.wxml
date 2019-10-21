@@ -1,0 +1,49 @@
+<view class="main">
+  <!-- 公共头部 -->
+  <mytitle></mytitle>
+  <view class="nav_wrap">
+  <!-- 滚动、滑动区域组件 -->
+    <scroll-view class="nav"  scroll-x>
+      <view class="nav_item {{index===currentIndexNav?'active':''}}" wx:for="{{navlist}}" wx:key="{{index}}" bindtap="activeNav" data-index="{{index}}">{{item.text}}</view>
+    </scroll-view>
+    <!-- 轮播图区域 -->
+    <view class="slides">
+      <swiper autoplay circular indicator-dots>
+        <swiper-item wx:for="{{swiperlist}}" wx:key="{{index}}">
+          <navigator>
+            <image src="{{item.imgSrc}}" mode="widthFix" class="swiper_image"></image>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 两列video列表 -->
+    <view class="video_wrap">
+       <!-- 超链接盒子 -->
+      <navigator url="../detail/detail?id={{item.id}}" class="video_item" wx:for="{{videoslist}}" wx:key="index">
+         <!-- 上半部分图片盒子 -->
+        <view class="video_img">
+            <image src="{{item.imgSrc}}" mode="widthFix"></image>
+            <!-- 定位父盒子 -->
+            <view class="video_info">
+              <!-- 播放量 -->
+              <view class="play_count_wrap">
+                <!-- 图标 -->
+                <text class="iconfont icon-liulan"></text>
+                <!-- 文字 -->
+                <text class="play_count">{{item.playCount}}</text>
+              </view>
+              <!-- 评论量 -->
+              <view class="comment_count_row">
+                <!-- 图标 -->
+                <text class="iconfont icon-pinglun"></text>
+                <!-- 文字 -->
+                <text class="comment_count">{{item.commentCount}}</text>
+              </view>
+            </view>
+        </view>
+        <!-- 下半部分盒子 -->
+        <view class="video_title">{{item.desc}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

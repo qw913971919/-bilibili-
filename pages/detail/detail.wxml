@@ -1,0 +1,30 @@
+<view class="main">
+  <mytitle></mytitle>
+  <view class="video_wrap">
+    <video src="{{video.videoSrc}}" controls></video>
+    <view class="video_detail">
+      <view class="video_title">{{video.videoTitle}}</view>
+      <view class="video_information">
+        <text class="video_author">{{video.author}}</text>
+        <text class="video_playCount">{{video.playCount}}</text>
+        <text class="video_commentCount">{{video.commentCount}}</text>
+        <text class="video_date">{{video.date}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 视频推荐 -->
+  <view class="others_wrap" wx:for="{{otherslist}}" wx:key="{{otherslist.index}}">
+    <navigator>
+      <view class="others_item">
+          <image class="others_image" src="{{item.imgSrc}}" mode="widthFix"></image>
+          <view class="others_box">
+            <text class="others_title">{{item.title}}</text>
+            <view class="others_text">
+              <text class="others_playmsg">{{item.playMsg}}次观看</text>
+              <text class="others_commentcount">{{item.commentCount}}弹幕</text>
+            </view>
+          </view>
+      </view>
+    </navigator>
+  </view>
+</view>
